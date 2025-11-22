@@ -1,0 +1,216 @@
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #f5f5f5;
+  background: #0f3460;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+body.lexy {
+  background: linear-gradient(135deg, #b33663, #9a1f55, #7b0d3b);
+}
+
+body.leemhar {
+  background: linear-gradient(135deg, #0f2c5f, #1a3e84, #3563aa);
+}
+
+body.erika {
+  background: linear-gradient(135deg, #7b0d1e, #b11226, #e01e37);
+}
+
+body.marriane {
+  background: linear-gradient(135deg, #2a0a36, #3e0d47, #5d1670);
+}
+
+body.raymond {
+  background: linear-gradient(135deg, #00332b, #005740, #00855a);
+}
+
+header {
+  position: relative;
+  padding: 4em 1em 3em;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 1s ease-in-out;
+}
+
+header .container {
+  position: relative;
+  z-index: 1;
+}
+
+.member-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  object-fit: cover;
+  margin-bottom: 1em;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+h1 {
+  font-size: 2.3em;
+  margin: 0.3em 0;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+h2 {
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.button:hover {
+  background: #fff;
+  color: #222;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.08);
+  margin: 2em auto;
+  max-width: 850px;
+  padding: 2em;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  animation: fadeUp 0.8s ease-in-out;
+}
+
+.section h3 {
+  font-size: 1.6em;
+  margin-bottom: 0.5em;
+  color: #fefefe;
+}
+
+.section p, .section ul {
+  font-size: 1.1em;
+  line-height: 1.6em;
+  margin: 0.5em auto;
+  max-width: 700px;
+  color: #dcdcdc;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li::before {
+  content: "★ ";
+  color: #ffd700;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.2);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s;
+  z-index: 10;
+  text-shadow: 0 0 5px #fff;
+}
+
+body.lexy .back-to-top {
+  color: #ff9ee7;
+  text-shadow: 0 0 5px #ff9ee7, 0 0 10px #ff9ee7, 0 0 15px #ff9ee7;
+}
+
+body.leemhar .back-to-top {
+  color: #66ccff;
+  text-shadow: 0 0 5px #66ccff, 0 0 10px #66ccff, 0 0 15px #66ccff;
+}
+
+body.erika .back-to-top {
+  color: #ff7070;
+  text-shadow: 0 0 5px #ff7070, 0 0 10px #ff7070, 0 0 15px #ff7070;
+}
+
+body.marriane .back-to-top {
+  color: #cba6ff;
+  text-shadow: 0 0 5px #cba6ff, 0 0 10px #cba6ff, 0 0 15px #cba6ff;
+}
+
+body.raymond .back-to-top {
+  color: #80ffaa;
+  text-shadow: 0 0 5px #80ffaa, 0 0 10px #80ffaa, 0 0 15px #80ffaa;
+}
+
+.back-to-top:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1.5em 0;
+  color: #ccc;
+  font-size: 0.9em;
+  margin-top: 3em;
+  letter-spacing: 1px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body.lexy header { border-bottom-color: #ff9ee7; }
+body.lexy .button:hover { background: #ff9ee7; color: #000; }
+
+body.leemhar header { border-bottom-color: #66ccff; }
+body.leemhar .button:hover { background: #66ccff; color: #000; }
+
+body.erika header { border-bottom-color: #ff7070; }
+body.erika .button:hover { background: #ff7070; color: #000; }
+
+body.marriane header { border-bottom-color: #cba6ff; }
+body.marriane .button:hover { background: #cba6ff; color: #000; }
+
+body.raymond header { border-bottom-color: #80ffaa; }
+body.raymond .button:hover { background: #80ffaa; color: #000; }
+
+a {
+  color: #a0cfff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ffd700;
+}

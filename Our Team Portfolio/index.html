@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="overlay"></div>
+
+    <button id="music-btn">🔊 Play Music</button>
+
+    <div class="top-buttons">
+      <button id="theme-toggle">☀️</button>
+      <div class="social-menu">
+        <button id="social-toggle">☰</button>
+        <div class="social-links">
+          <a href="https://facebook.com/lexy.valdez" target="_blank" class="social-button fb">Facebook</a>
+          <a href="https://instagram.com/lexy.valdez" target="_blank" class="social-button ig">Instagram</a>
+          <a href="https://twitter.com/lexy.valdez" target="_blank" class="social-button tw">Twitter</a>
+        </div>
+      </div>
+    </div>
+
+    <h1>Welcome to Our Team Portfolio</h1>
+    <p>Meet the creative members of Group 5!</p>
+  </header>
+
+  <audio id="bg-music" src="music.mp3"></audio>
+
+  <section id="introduction">
+    <h2>About Our Group</h2>
+    <p>We are <strong>Group 5</strong>passionate creators combining design, code, and creativity. Our projects focus on beauty, teamwork, and imagination, always striving to bring innovative ideas to life and make every creation meaningful, engaging, and inspiring for everyone. We believe in pushing boundaries, exploring new concepts, and collaborating closely to transform ideas into visually stunning and functional experiences that leave a lasting impression.</p>
+    <img src="about-photo.jpg" alt="About Group 5" class="hover-bg">
+  </section>
+
+  <section id="members">
+    <h2>Meet Our Members</h2>
+    <div class="member-cards">
+      <div class="member-card pink">
+        <img src="lexy.jpg" alt="Lexy Valdez">
+        <h3>Lexy Valdez</h3>
+        <p><strong>Project Lead</strong></p>
+        <p>Si "Gusto ko nang umuwi"</p>
+        <a href="member1.html" class="button">View Portfolio</a>
+      </div>
+      <div class="member-card blue">
+        <img src="leemhar.jpg" alt="Leemhar Manangan">
+        <h3>Leemhar Manangan</h3>
+        <p><strong>HTML & CSS Coder</strong></p>
+        <p>Si "Gwapo na Mabait pa"</p>
+        <a href="member2.html" class="button">View Portfolio</a>
+      </div>
+      <div class="member-card red">
+        <img src="mendoza.JPG" alt="Erika Mendoza">
+        <h3>Erika Mendoza</h3>
+        <p><strong>Design & Layout Specialist</strong></p>
+        <p>Si "Ang init tara milktea"</p>
+        <a href="member3.html" class="button">View Portfolio</a>
+      </div>
+      <div class="member-card violet">
+        <img src="macanas.JPG" alt="Marriane Joy Macanas">
+        <h3>Marriane Joy Macanas</h3>
+        <p><strong>Writing Editor</strong></p>
+        <p>Si "Tara MCDO"</p>
+        <a href="member4.html" class="button">View Portfolio</a>
+      </div>
+      <div class="member-card green">
+        <img src="fronda.JPG" alt="Raymond Fronda">
+        <h3>Raymond Fronda</h3>
+        <p><strong>Media & Assets Manager</strong></p>
+        <p>Si "Tara CDO"</p>
+        <a href="member5.html" class="button">View Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="group-photo">
+    <h2>Snapshots</h2>
+    <div class="image-container">
+      <img src="Group_photo1.jpg" alt="Group 1" data-desc="Valdez: May oras pa ba akong magpaka-productive o uuwi na lang ako?">
+      <img src="Group_photo2.jpg" alt="Group 2" data-desc="Manangan: Kung pogi lang ang susukatin, gold medal ako.">
+      <img src="Group_photo3.jpg" alt="Group 3" data-desc="Mendoza: Masmasakit kung hinihitay mo parin sia kahit sa iba na sia Masaya ">
+      <img src="Group_photo4.jpg" alt="Group 4" data-desc="Macanas: May kausap, pero lagi akong naka-standby mode habang nag-iisip.">
+      <img src="Group_photo5.jpg" alt="Group 5" data-desc="Fronda: Chill lang, may charger pa ako sa mood ko.">
+    </div>
+    <p>Our journey together from planning to creation!</p>
+
+    <div id="photoModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg">
+      <div id="caption"></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Group 5 | Our Team Portfolio</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+      toggle.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+    });
+
+    const socialToggle = document.getElementById('social-toggle');
+    const socialLinks = document.querySelector('.social-links');
+    socialToggle.addEventListener('click', () => {
+      socialLinks.classList.toggle('active');
+    });
+
+    const modal = document.getElementById("photoModal");
+    const modalImg = document.getElementById("modalImg");
+    const captionText = document.getElementById("caption");
+    const images = document.querySelectorAll("#group-photo img");
+    const closeBtn = document.querySelector(".close");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        captionText.innerHTML = img.getAttribute("data-desc");
+      });
+    });
+
+    closeBtn.onclick = () => { modal.style.display = "none"; };
+    window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; };
+
+    const musicBtn = document.getElementById("music-btn");
+    const bgMusic = document.getElementById("bg-music");
+    let playing = false;
+
+    musicBtn.addEventListener("click", () => {
+      if (!playing) {
+        bgMusic.play();
+        musicBtn.textContent = "⏸ Pause Music";
+        playing = true;
+      } else {
+        bgMusic.pause();
+        musicBtn.textContent = "🔊 Play Music";
+        playing = false;
+      }
+    });
+  </script>
+</body>
+</html>
